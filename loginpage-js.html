@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Login Page</title>
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Login</h2>
+
+    <form onsubmit="return validateForm()">
+        <label>Username:</label><br>
+        <input type="text" id="username" placeholder="Enter Username"><br>
+        <br><label>Password:</label><br>
+        <input type="password" id="password" placeholder="Enter Password">
+        <p id="errorMsg" class="error"></p>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+function validateForm() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var error = document.getElementById("errorMsg");
+
+    if (username === "" || password === "") {
+        error.innerHTML = "All fields are required!";
+        return false;
+    }
+
+    if (password.length < 6) {
+        error.innerHTML = "Password must be at least 6 characters!";
+        return false;
+    }
+
+    alert("Login Successful!");
+    return true;
+}
+</script>
+
+</body>
+187
+</html>
